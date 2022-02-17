@@ -1,5 +1,4 @@
 import paramiko
 
-
-import utils.parser
+from utils.parser import args
 

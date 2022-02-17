@@ -17,9 +17,10 @@ argsParser = argparse.ArgumentParser()
 argsParser.add_argument("-u", "--unlock", 
                         help="Removes locks on remote resources before attempting to create a SAVF.",
                         action="store_true")
+
 argsParser.add_argument("host", help="<Required>Remote IBMi host address.",
                         type=remote_host)
+
 argsParser.add_argument("Libraries", help="<Required>Libraries to backup as SAVF.", nargs="*")
 
 args = argsParser.parse_args()
-print(args.Libraries)
