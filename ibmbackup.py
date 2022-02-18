@@ -1,4 +1,4 @@
 import paramiko
 
-from utils.parser import args
+from utils.parser import namespace
 

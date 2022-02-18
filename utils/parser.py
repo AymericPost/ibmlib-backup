@@ -1,5 +1,4 @@
 import os
-
 import argparse
 
 # Argument checking functions :
@@ -31,13 +30,18 @@ def openssh_pk(arg_val):
 # Argument parser settings :
 
 argsParser = argparse.ArgumentParser()
-argsParser.add_argument("-u", "--unlock", 
+argsParser.add_argument("-U", "--unlock", 
                         help="Removes locks on remote resources before attempting to create a SAVF.",
                         action="store_true")
 
 argsParser.add_argument("-k", "--private-key",
-                        help="Private OpenSSH key for credentialess login.",
+                        help="Private OpenSSH key for credentialess login. The script will still prompt for user name if not given by arguments.",
                         type=openssh_pk, required=False)
+
+argsParser.add_argument("-u", "--user", help="Provides user for authentification.")
+
+argsParser.add_argument("-t", "--time-out", type=int, default=30,
+                        help="Maximum wait time in seconds for remote scripts to provide results.")
 
 argsParser.add_argument("host", help="<Required> Remote IBMi host address.",
                         type=remote_host)
@@ -45,5 +49,4 @@ argsParser.add_argument("host", help="<Required> Remote IBMi host address.",
 argsParser.add_argument('library', nargs="+",
                         help="<Required> Libraries to backup as SAVF.")
 
-
-args = argsParser.parse_args()
+namespace = argsParser.parse_args()
