@@ -1,6 +1,7 @@
-import paramiko
+from clients.ssh import get_ssh_client
+from config.argsparser import namespace
 
-from config.argsparser import argsParser
+if __name__ == "__main__":    
+    ssh = get_ssh_client(namespace.host, namespace.user, namespace.private_key)
 
-with argsParser.parse_args() as namespace:
-    None
+    ssh.close()

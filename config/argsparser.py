@@ -25,3 +25,5 @@ argsParser.add_argument("host", type=remote_host,
 
 argsParser.add_argument('library', nargs="+",
                         help="<Required> Libraries to backup as SAVF.")
+
+namespace = argsParser.parse_args()

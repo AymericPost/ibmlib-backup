@@ -4,7 +4,7 @@ import argparse
 # Argument checking functions :
 
 def remote_host(arg_val): 
-    pong = os.system("ping {} 1 {} {} >"
+    pong = os.system("ping {} 1 {} > {}"
                     .format( ("-c", "-n")[os.name == 'nt'],
                             arg_val,
                             ("/dev/null 2>&1", os.devnull)[os.name == "nt"]) )
