@@ -1,0 +1,8 @@
+             PGM        PARM(&TGTLIB)
+
+             DCL        VAR(&TGTLIB) TYPE(*CHAR) LEN(10)
+
+             CRTSAVF    FILE(QGPL/&TGTLIB)
+             SAVLIB     LIB(&TGTLIB) DEV(*SAVF) SAVF(QGPL/&TGTLIB)
+
+             ENDPGM
