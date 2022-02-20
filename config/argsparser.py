@@ -17,11 +17,13 @@ argsParser.add_argument("-u", "--user", help="Provides user name for authentific
 argsParser.add_argument("-t", "--time-out", type=int, default=30,
                         help="Maximum wait time in seconds for remote scripts to provide results. Default=30")
 
-argsParser.add_argument("-e", "--exec-path", default="/usr/bin/ibmbackup.sh",
-                        help="Path to QSH script on remote IBMi. Target will be sujected to hash check. Default='/usr/bin/ibmbackup.sh'")
+argsParser.add_argument("-e", "--exec-path", default="/usr/share/ibmbackup.sh",
+                        help="Path to QSH script on remote IBMi. Target will be sujected to hash check. Default='/usr/share/ibmbackup.sh'")
 
 argsParser.add_argument("host", type=remote_host,
                         help="<Required> Remote IBMi host address.")
 
 argsParser.add_argument('library', nargs="+",
                         help="<Required> Libraries to backup as SAVF.")
+
+namespace = argsParser.parse_args()
