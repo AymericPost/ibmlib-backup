@@ -1,6 +1,6 @@
 import argparse
 
-from utils.argschecks import openssh_pk, remote_host
+from utils.argschecks import openssh_pk, remote_host, is_directory
 
 # Argument parser settings :
 
@@ -19,6 +19,9 @@ argsParser.add_argument("-t", "--time-out", type=int, default=30,
 
 argsParser.add_argument("-e", "--exec-path", default="/usr/share/ibmbackup.sh",
                         help="Path to QSH script on remote IBMi. Target will be sujected to hash check. Default='/usr/share/ibmbackup.sh'")
+
+argsParser.add_argument("-o", "--output", default="./out/", type=is_directory,
+                        help="Path to output generated SAVF on localhost.")
 
 argsParser.add_argument("host", type=remote_host,
                         help="<Required> Remote IBMi host address.")

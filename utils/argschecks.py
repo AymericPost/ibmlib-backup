@@ -25,3 +25,11 @@ def openssh_pk(arg_val):
                 raise argparse.ArgumentTypeError("File {} is not an OpenSSH private key.".format(arg_val))
     else:
         raise argparse.ArgumentTypeError("File {} does not exist.".format(arg_val))
+
+def is_directory(arg_val):
+    if(os.path.isfile(arg_val)):
+        raise argparse.ArgumentTypeError(arg_val + " is a file. Output must be a directory.")
+    elif(os.path.isdir(arg_val)):
+        return arg_val
+    else:
+        raise argparse.ArgumentTypeError("Directory {} does not exist.".format(arg_val))
