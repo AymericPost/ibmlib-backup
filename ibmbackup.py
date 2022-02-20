@@ -10,5 +10,11 @@ if __name__ == "__main__":
     # Checks if remote script exists and is the same as local script
     checksum(ssh, namespace.exec_path)
 
+    main_in, main_out, main_err = ssh.exec_command(
+        namespace.exec_path + " " + " ".join(namespace.library))
+
+    while(not main_out.channel.exit_status_ready()):
+        sleep(1)
+
     ssh.close()
     del ssh
