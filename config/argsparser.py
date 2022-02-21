@@ -1,6 +1,6 @@
 import argparse
 
-from utils.argschecks import openssh_pk, remote_host, is_directory
+from utils.argschecks import openssh_pk, remote_host, is_directory, uppercase
 
 # Argument parser settings :
 
@@ -26,7 +26,7 @@ argsParser.add_argument("-o", "--output", default="./out/", type=is_directory,
 argsParser.add_argument("host", type=remote_host,
                         help="<Required> Remote IBMi host address.")
 
-argsParser.add_argument('library', nargs="+",
+argsParser.add_argument('library', nargs="+", type=uppercase,
                         help="<Required> Libraries to backup as SAVF.")
 
 namespace = argsParser.parse_args()

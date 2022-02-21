@@ -33,3 +33,6 @@ def is_directory(arg_val):
         return arg_val
     else:
         raise argparse.ArgumentTypeError("Directory {} does not exist.".format(arg_val))
+
+def uppercase(arg_val):
+    return arg_val.upper()
