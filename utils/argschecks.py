@@ -35,4 +35,4 @@ def is_directory(arg_val):
         raise argparse.ArgumentTypeError("Directory {} does not exist.".format(arg_val))
 
 def uppercase(arg_val):
-    return arg_val
+    return arg_val.upper()
