@@ -3,7 +3,7 @@ import os
 
 def checksum(ssh, exec_path):
     ssh_in, ssh_out, ssh_err = ssh.exec_command(
-        "sha256sum " + exec_path)
+        "/QOpenSys/pkgs/bin/sha256sum " + exec_path)
     exit_status = ssh_out.channel.recv_exit_status()
 
     # Exit status OK if remote script exists
