@@ -9,6 +9,9 @@ if __name__ == "__main__":
     ssh = get_ssh_client(namespace.host, namespace.user, namespace.private_key)
     scp = get_scp_client(ssh)
 
+    if(namespace.user is None):
+        namespace.user = ssh.get_transport().get_username()
+
     # Checks if remote script exists and is the same as local script
     checksum(ssh, namespace.exec_path)
 
