@@ -11,6 +11,9 @@ argsParser = argparse.ArgumentParser()
 #                         help="Removes locks on remote resources before attempting to create a SAVF.",
 #                         action="store_true")
 
+argsParser.add_argument("--no-checksum", action="store_true",
+                        help="Deactivates checksum. Do it only if necessary")
+
 argsParser.add_argument("-k", "--private-key", type=openssh_pk, required=False,
                         help="Path to private OpenSSH key for credentialess login. The script will still prompt for user name if not given by arguments.")
 

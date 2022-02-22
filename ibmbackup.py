@@ -12,8 +12,9 @@ if __name__ == "__main__":
     if(namespace.user is None):
         namespace.user = ssh.get_transport().get_username()
 
-    # Checks if remote script exists and is the same as local script
-    checksum(ssh, namespace.exec_path)
+    if(not namespace.no_checksum):
+        # Checks if remote script exists and is the same as local script
+        checksum(ssh, namespace.exec_path)
 
     env_in, env_out, env_err = ssh.exec_command(
         "echo \"{}\" > /home/{}/.clle_path".format(namespace.clle_path, namespace.user)
