@@ -5,9 +5,10 @@ from utils.argschecks import openssh_pk, remote_host, is_directory, uppercase
 # Argument parser settings :
 
 argsParser = argparse.ArgumentParser()
-argsParser.add_argument("-U", "--unlock", 
-                        help="Removes locks on remote resources before attempting to create a SAVF.",
-                        action="store_true")
+# Deactivated until more R&D is done:
+# argsParser.add_argument("-U", "--unlock",
+#                         help="Removes locks on remote resources before attempting to create a SAVF.",
+#                         action="store_true")
 
 argsParser.add_argument("-k", "--private-key", type=openssh_pk, required=False,
                         help="Path to private OpenSSH key for credentialess login. The script will still prompt for user name if not given by arguments.")
