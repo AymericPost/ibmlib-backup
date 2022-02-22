@@ -2,6 +2,6 @@
 args=("$@")
 
 for arg in ${args[@]}; do
-	system "CALL PGM(AS06005/QSHLIBBKUP) PARM($arg)"
+	system "CALL PGM($(cat ~/.clle_path)) PARM($arg)"
 	mv /QSYS.LIB/QGPL.LIB/$(echo $arg).FILE ~
 done

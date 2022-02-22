@@ -12,8 +12,14 @@ if __name__ == "__main__":
     # Checks if remote script exists and is the same as local script
     checksum(ssh, namespace.exec_path)
 
+    env_in, env_out, env_err = ssh.exec_command(
+        "echo \"{}\" > /home/{}/.clle_path".format(namespace.clle_path, namespace.user)
+    )
+
+    env_out.channel.recv_exit_status()
+
     main_in, main_out, main_err = ssh.exec_command(
-        "bash " + namespace.exec_path + " " + " ".join(namespace.library))
+        "bash {} {}".format(namespace.exec_path, " ".join(namespace.library)))
 
     while(not main_out.channel.exit_status_ready()):
         sleep(1)
