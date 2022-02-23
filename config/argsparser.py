@@ -22,7 +22,7 @@ argsParser.add_argument("-t", "--time-out", type=int, default=30,
 argsParser.add_argument("-e", "--exec-path", default="/usr/share/ibmbackup.sh",
                         help="Path to QSH script on remote IBMi. Target will be sujected to hash check. Default='/usr/share/ibmbackup.sh'")
 
-argsParser.add_argument("-c", "--clle-path", default="QGPL/QSHLIBBKUP",
+argsParser.add_argument("-c", "--clle-path", default="QSHLIBBKUP",
                         help="CLLE binary creating SAVF on remote IBMi. Default='QGPL/QSHLIBBKUP'")
 
 argsParser.add_argument("-o", "--output", default="./out/", type=is_directory,
