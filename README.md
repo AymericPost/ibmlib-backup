@@ -123,8 +123,8 @@ optional arguments:
 
 If you intend to get SAVFs of MYLIB and MYLIB2 library from myibmi.com as ACCADMIN:
 
-```python ibmbackup.py ibmi.com MYLIB MYLIB2```
+```python ibmbackup.py myibmi.com MYLIB MYLIB2```
 
 If you have set your IBMi and your computer to use a 'id_rsa' OpenSSH key, for the same command with no prompt at all :
 
-```python ibmbackup.py -u ACCADMIN -k ~/.ssh/id_rsa ibmi.com MYLIB MYLIB2```
+```python ibmbackup.py -u ACCADMIN -k ~/.ssh/id_rsa myibmi.com MYLIB MYLIB2```
