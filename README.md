@@ -72,7 +72,7 @@ To make use of this script, you need to make sure the user profile you intend to
 
 To make your home directory the same as your user profile, enter:
 
-```CHGUSRPRF USRPRF(AS06005) HOMEDIR(*USRPRF)```
+```CHGUSRPRF USRPRF(MYPROFILE) HOMEDIR(*USRPRF)```
 
 If the directory for your username doesn't exist, you need to create it. Start a Shell session with `QSH` then type :
 
@@ -121,7 +121,7 @@ optional arguments:
                         Path to output generated SAVF on localhost.
 ```
 
-If you intend to get SAVFs of MYLIB and MYLIB2 library from myibmi.com as ACCADMIN:
+If you intend to get SAVFs of MYLIB and MYLIB2 libraries from myibmi.com as ACCADMIN:
 
 ```python ibmbackup.py -u ACCADMIN myibmi.com MYLIB MYLIB2```
 
