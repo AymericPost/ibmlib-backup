@@ -116,7 +116,7 @@ optional arguments:
                         Path to QSH script on remote IBMi. Target will be sujected to hash check.
                         Default='/usr/share/ibmbackup.sh'
   -c CLLE_PATH, --clle-path CLLE_PATH
-                        CLLE binary creating SAVF on remote IBMi. Default='QGPL/QSHLIBBKUP'
+                        CLLE binary creating SAVF on remote IBMi. Default='QSHLIBBKUP'
   -o OUTPUT, --output OUTPUT
                         Path to output generated SAVF on localhost.
 ```
