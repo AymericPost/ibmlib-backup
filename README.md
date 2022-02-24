@@ -2,6 +2,8 @@
 
 A python script with Shell and CLLE scripts friends that makes SAVFs out of IBMi libraries then SCP them to your computer.
 
+(Will be down to 1 script Soon™)
+
 ## Setup
 
 ### Pre-requisites
