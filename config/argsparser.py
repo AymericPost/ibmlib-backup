@@ -1,5 +1,4 @@
 import argparse
-from email.policy import default
 
 from utils.argschecks import openssh_pk, remote_host, is_directory, uppercase
 
@@ -19,14 +18,11 @@ argsParser.add_argument("-k", "--private-key", type=openssh_pk, required=False,
 
 argsParser.add_argument("-u", "--user", help="Provides user name for authentification.")
 
-argsParser.add_argument("-t", "--time-out", type=int, default=30,
-                        help="Maximum wait time in seconds for remote scripts to provide results. Default=30")
-
 argsParser.add_argument("-e", "--exec-path", default="/usr/share/ibmbackup.sh",
                         help="Path to QSH script on remote IBMi. Target will be sujected to hash check. Default='/usr/share/ibmbackup.sh'")
 
 argsParser.add_argument("-c", "--clle-path", default="QSHLIBBKUP",
-                        help="CLLE binary creating SAVF on remote IBMi. Default='QGPL/QSHLIBBKUP'")
+                        help="CLLE binary creating SAVF on remote IBMi. Default='QSHLIBBKUP'")
 
 argsParser.add_argument("-o", "--output", default="./out/", type=is_directory,
                         help="Path to output generated SAVF on localhost.")
